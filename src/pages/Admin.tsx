@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
@@ -81,7 +80,13 @@ const Admin = () => {
     try {
       const { data, error } = await supabase
         .from('blogs')
-        .insert([blog])
+        .insert([{
+          title: blog.title || '',
+          content: blog.content || '',
+          cover_image: blog.cover_image || '',
+          category: blog.category || '',
+          author: blog.author || '',
+        }])
         .select();
         
       if (error) {
