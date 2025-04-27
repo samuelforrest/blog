@@ -79,17 +79,6 @@ const Admin = () => {
   
   const handleCreateBlog = async (blog: Partial<Blog>) => {
     try {
-      // Make sure all required fields are present before inserting
-      if (!blog.title || !blog.content || !blog.cover_image || !blog.category || !blog.author) {
-        toast({
-          title: "Missing fields",
-          description: "Please fill out all required fields.",
-          variant: "destructive",
-        });
-        return;
-      }
-      
-      // Now it's safe to insert as we've verified all required fields
       const { data, error } = await supabase
         .from('blogs')
         .insert([blog])

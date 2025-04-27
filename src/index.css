@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -145,43 +146,4 @@
   .blog-content img {
     @apply max-w-full h-auto rounded-lg my-4;
   }
-}
-
-/* Rich Text Editor Styles */
-.ProseMirror p.is-editor-empty:first-child::before {
-  color: #adb5bd;
-  content: attr(data-placeholder);
-  float: left;
-  height: 0;
-  pointer-events: none;
-}
-
-.ProseMirror {
-  outline: none;
-}
-
-.ProseMirror > * + * {
-  margin-top: 0.75em;
-}
-
-.ProseMirror ul,
-.ProseMirror ol {
-  padding: 0 1rem;
-}
-
-.ProseMirror blockquote {
-  border-left: 2px solid #ddd;
-  padding-left: 1rem;
-  font-style: italic;
-}
-
-.ProseMirror img {
-  max-width: 100%;
-  height: auto;
-  margin: 1rem 0;
-}
-
-.ProseMirror a {
-  color: #2563eb;
-  text-decoration: underline;
 }
