@@ -5,7 +5,7 @@ import { componentTagger } from 'lovable-tagger';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/bloggy-ai-scribe/',  // Base path for GitHub Pages (this should be the subdirectory where your site is hosted)
+  base: '/blog/',  // Base path for GitHub Pages (this should be the subdirectory where your site is hosted)
   build: {
     outDir: 'dist',  // Output directory for the build
   },
