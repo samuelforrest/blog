@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <div className="container mx-auto py-8 px-4">
       <section className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-blog-darkpurple mb-2">
+        <h1 className="text-4xl md:text-5xl font-bold text-blog-[#4a90e2] mb-2">
           BloggyAI
         </h1>
         <p className="text-xl text-blog-gray">
