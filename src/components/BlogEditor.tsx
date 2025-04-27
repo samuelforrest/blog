@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { Textarea } from './ui/textarea';
+import RichTextEditor from './RichTextEditor';
 import { Blog } from '@/lib/supabase';
 
 interface BlogEditorProps {
@@ -29,9 +29,13 @@ const BlogEditor = ({
   
   const [saving, setSaving] = useState(false);
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setBlog((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleContentChange = (content: string) => {
+    setBlog((prev) => ({ ...prev, content }));
   };
   
   const handleSubmit = async (e: React.FormEvent) => {
@@ -101,14 +105,9 @@ const BlogEditor = ({
       
       <div className="space-y-2">
         <Label htmlFor="content">Content</Label>
-        <Textarea
-          id="content"
-          name="content"
-          value={blog.content}
-          onChange={handleChange}
-          placeholder="Write your blog content here (HTML formatting is supported)"
-          className="min-h-[300px]"
-          required
+        <RichTextEditor
+          content={blog.content}
+          onChange={handleContentChange}
         />
       </div>
       
