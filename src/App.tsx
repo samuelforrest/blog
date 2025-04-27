@@ -21,11 +21,11 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/bloggy-ai-scribe">
+        <BrowserRouter basename="/blog">
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/blog/:id" element={<BlogPost />} />
+              <Route path="/blog/blog/:id" element={<BlogPost />} />
               <Route path="/category/:category" element={<Category />} />
               <Route path="/login" element={<Login />} />
               <Route path="/admin" element={<Admin />} />
