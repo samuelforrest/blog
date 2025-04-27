@@ -10,7 +10,7 @@ import {
   Link as LinkIcon, 
   Image as ImageIcon,
   ListOrdered,
-  ListUnordered,
+  List,
   Quote,
   Heading2
 } from 'lucide-react';
@@ -45,7 +45,7 @@ const RichTextEditor = ({ content, onChange }: RichTextEditorProps) => {
   const addLink = () => {
     const url = window.prompt('Enter URL:');
     if (url) {
-      editor.chain().focus().setLink({ href: url }).run();
+      editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
     }
   };
 
@@ -96,7 +96,7 @@ const RichTextEditor = ({ content, onChange }: RichTextEditorProps) => {
           data-active={editor.isActive('bulletList')}
           className={editor.isActive('bulletList') ? 'bg-muted' : ''}
         >
-          <ListUnordered className="h-4 w-4" />
+          <List className="h-4 w-4" />
         </Button>
 
         <Button
