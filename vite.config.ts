@@ -9,6 +9,10 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  base: '/blog/', // Change this to '/blog/' for the subdirectory
+  build: {
+    outDir: 'dist', // Output directory for the build
+  },
   plugins: [
     react(),
     mode === 'development' &&
@@ -20,3 +24,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
